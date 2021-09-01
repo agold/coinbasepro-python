@@ -1047,3 +1047,14 @@ class AuthenticatedClient(PublicClient):
                 }
         """
         return self._send_message('get', '/fees')
+
+    def get_fee_estimate(self):
+        """ Gets the network fee estimate when sending to the given address.
+
+        Returns:
+            dict: Fee information and USD volume::
+                {
+                    "fee":".01",
+                }
+        """
+        return self._send_message('get', '/withdrawals/fee-estimate')
