@@ -1048,7 +1048,7 @@ class AuthenticatedClient(PublicClient):
         """
         return self._send_message('get', '/fees')
 
-    def get_fee_estimate(self):
+    def get_fee_estimate(self, currency, crypto_address):
         """ Gets the network fee estimate when sending to the given address.
 
         Returns:
@@ -1057,4 +1057,7 @@ class AuthenticatedClient(PublicClient):
                     "fee":".01",
                 }
         """
-        return self._send_message('get', '/withdrawals/fee-estimate')
+
+        params = {'currency': currency,
+                  'crypto_address': crypto_address}
+        return self._send_message('get', '/withdrawals/fee-estimate', params=params)
