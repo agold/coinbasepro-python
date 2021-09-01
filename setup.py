@@ -5,8 +5,8 @@ from setuptools import setup, find_packages
 install_requires = [
     'sortedcontainers>=1.5.9',
     'requests>=2.25.0',
-    'six>=1.10.0',
-    'websocket-client>=0.40.0',
+    'six>=1.16.0',
+    'websocket-client>=1.2.1',
     'pymongo>=3.5.1',
 ]
 
